@@ -10,7 +10,7 @@ const Intro = (props) => {
       <div className="intro-wrapper position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
         <div className="info d-flex flex-column align-items-center">
           <h1 className="">Quizzical App</h1>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <p>Test your knowledge</p>
           {props.isLoading ? (
             <BarLoader color="#293264" loading={isLoading} size={25} aria-label="Loading Spinner" data-testid="loader" />
           ) : (
