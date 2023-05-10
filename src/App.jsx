@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Intro from "./Intro";
@@ -8,7 +8,6 @@ let QuestionsNums = 5;
 
 function App() {
   const [startQuiz, setStartQuiz] = useState(false);
-
   const [category,setCategory] = useState(9)
 
   function handleClick() {
