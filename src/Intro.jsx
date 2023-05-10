@@ -17,7 +17,7 @@ const Intro = (props) => {
            :<Button className="rounded-pill w-50" variant="primary" onClick={props.handleClick}>
             Start Quiz
             </Button>}
-          <select className="mt-3" onChange={(e)=>{props.setCategory(e.target.value)}}>
+          <select className="mt-3  form-select" value={props.category} onChange={(e)=>{props.setCategory(e.target.value)}}>
             {categories?.trivia_categories.map(cate=> <option value={cate.id}>{cate.name}</option>)}
           </select>
         </div>
