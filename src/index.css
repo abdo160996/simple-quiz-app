@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap");
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;*/
+
+:root {
+  --primary: #293264;
+  --secondary: #d6dbf5;
+}
+body {
+  font-family: "Cabin", sans-serif;
+}
+
+.intro-wrapper {
+  background: url("/src/assets/blob1.png") top -100px right -90px no-repeat, url("/src/assets/blob2.png") bottom -100px left -90px no-repeat, #f5f7fb;
+  width: 550px;
+  height: 550px;
+}
+
+.questions-wrapper {
+  background: url("/src/assets/blob1.png") top -100px right -200px no-repeat, url("/src/assets/blob2.png") bottom -100px left -200px no-repeat, #f5f7fb;
+  width: min(600px, 100%);
+}
+
+.answer {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  cursor: pointer;
+}
+.answered {
+  pointer-events: none;
+}
+
+.correct-answer {
+  background-color: #94d7a2 !important;
+}
+.not-correct-answer {
+  background-color: #f8bcbc !important;
+  opacity: 0.4;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--secondary);
+}
+
+
+label {
+  max-width: 130px;
+}
+
+.check-answer{
+ width: 25%;
+}
+
+@media(max-width:767px){
+  label{
+    width: 70px;
+  }
+  .check-answer{
+    width: 50%;
+   }
+}
