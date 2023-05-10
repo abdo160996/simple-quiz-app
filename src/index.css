@@ -20,7 +20,7 @@ body {
 
 .questions-wrapper {
   background: url("/src/assets/blob1.png") top -100px right -200px no-repeat, url("/src/assets/blob2.png") bottom -100px left -200px no-repeat, #f5f7fb;
-  width: min(600px, 100%);
+  width: min(700px, 100%);
 }
 
 .answer {

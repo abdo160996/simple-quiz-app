@@ -18,7 +18,7 @@ function App() {
   return (
     <>
 
-    {startQuiz ? <Questions category={category} QuestionsNums={QuestionsNums} setStartQuiz={setStartQuiz} setNewQuiz={setNewQuiz} />
+    {startQuiz ? <Questions category={category} QuestionsNums={QuestionsNums} setStartQuiz={setStartQuiz}  />
      : <Intro handleClick={handleClick}  setCategory={setCategory} /> }
   </>
   )
