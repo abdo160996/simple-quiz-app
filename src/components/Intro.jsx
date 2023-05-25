@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import BarLoader from "react-spinners/BarLoader";
-import useFetch from "./useFetch";
+import useFetch from "../hook/useFetch";
 
 const Intro = (props) => {
   const { data: categories, isLoading } = useFetch("https://opentdb.com/api_category.php");
@@ -11,7 +11,8 @@ const Intro = (props) => {
         <div className="info d-flex flex-column align-items-center">
           <h1 className="">Quizzical App</h1>
           <p>Test your knowledge</p>
-          {props.isLoading ? (
+
+          {isLoading ? (
             <BarLoader color="#293264" loading={isLoading} size={25} aria-label="Loading Spinner" data-testid="loader" />
           ) : (
             <>
@@ -26,7 +27,9 @@ const Intro = (props) => {
                 }}
               >
                 {categories?.trivia_categories.map((cate) => (
-                  <option value={cate.id}>{cate.name}</option>
+                  <option key={cate.id} value={cate.id}>
+                    {cate.name}
+                  </option>
                 ))}
               </select>
             </>
