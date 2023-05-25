@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Intro from "./Intro";
-import Questions from "./Questions";
+import Intro from "./components/Intro";
+import Questions from "./components/Questions";
 
 const QuestionsNums = 5;
 
