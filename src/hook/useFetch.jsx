@@ -19,13 +19,11 @@ function useFetch(url) {
         setError(null);
       })
       .catch((e) => {
-        if (e.name === "AbortError") {
-          console.log(e);
-        } else {
+        
           setData(null);
           setisLoading(false);
           setError(e.message);
-        }
+        
       });
 
     return () => {
