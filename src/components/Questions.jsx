@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 import BarLoader from "react-spinners/BarLoader";
 import he from "he";
 import Question from "./Question";
@@ -12,7 +13,7 @@ const Questions = (props) => {
   const [checkAll, setCheckAll] = useState(false);
   const [allAnswered, setAllAnswered] = useState(false);
 
-  const { data: questions, isLoading } = useFetch(`https://opentdb.com/api.php?amount=${props.QuestionsNums}&type=multiple&category=${props.category}`);
+  const { data: questions, isLoading, error } = useFetch(`https://opentdb.com/api.php?amount=${props.QuestionsNums}&type=multiple&category=${props.category}`);
 
   const QA = questions?.results.map((qa, idx) => {
     return <Question key={idx} questionData={qa} questionNum={idx} setAnswerList={setAnswerList} checkAll={checkAll} />;
@@ -51,6 +52,10 @@ const Questions = (props) => {
     <div className="container">
       {isLoading ? (
         <BarLoader className="position-absolute top-50 start-50 translate-middle" color="#293264" loading={isLoading} size={25} aria-label="Loading Spinner" data-testid="loader" />
+      ) : error ? (
+        <Alert variant={"danger"}>
+          Something Went Wrong... Refresh F5
+        </Alert>
       ) : (
         <div className="questions-wrapper rounded-1 mt-5 mx-auto d-flex flex-column align-items-center justify-content-center">
           <form onSubmit={handleSubmit}>

@@ -4,9 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Intro from "./components/Intro";
 import Questions from "./components/Questions";
 
-const QuestionsNums = 5;
+
 
 function App() {
+  const [questionsNum, setQuestionsNum] = useState(5)
   const [startQuiz, setStartQuiz] = useState(false);
   const [category, setCategory] = useState(9);
 
@@ -15,7 +16,7 @@ function App() {
   }
 
   return (
-    <>{startQuiz ? <Questions category={category} QuestionsNums={QuestionsNums} startQuiz={startQuiz} setStartQuiz={setStartQuiz} /> : <Intro handleClick={handleClick} category={category} setCategory={setCategory} />}</>
+    <>{startQuiz ? <Questions category={category} QuestionsNums={questionsNum} startQuiz={startQuiz} setStartQuiz={setStartQuiz} /> : <Intro handleClick={handleClick} setQuestionsNum={setQuestionsNum} category={category} setCategory={setCategory} />}</>
   );
 }
 
